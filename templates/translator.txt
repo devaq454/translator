@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Translator</h1>
+<form action="" method="post">
+    <p>
+        <label>From language</label>
+        <select name="language_from">From language
+            {% if from_language %}
+            <option>{{ from_language }}</option>
+            {% endif %}
+            <option>Afrikaans</option>
+            <option>Albanian</option>
+            <option>Amharic</option>
+            <option>Arabic</option>
+            <option>Armenian</option>
+            <option>Azerbaijani</option>
+            <option>Basque</option>
+            <option>Belarusian</option>
+            <option>Bengali</option>
+            <option>Bosnian</option>
+            <option>Bulgarian</option>
+            <option>Catalan</option>
+            <option>Cebuano</option>
+            <option>Chichewa</option>
+            <option>Chinese (simplified)</option>
+            <option>Chinese (traditional)</option>
+            <option>Corsican</option>
+            <option>Croatian</option>
+            <option>Czech</option>
+            <option>Danish</option>
+            <option>Dutch</option>
+            <option>English</option>
+            <option>Esperanto</option>
+            <option>Estonian</option>
+            <option>Filipino</option>
+            <option>Finnish</option>
+            <option>French</option>
+            <option>Frisian</option>
+            <option>Galician</option>
+            <option>Georgian</option>
+            <option>German</option>
+            <option>Greek</option>
+            <option>Gujarati</option>
+            <option>Haitian creole</option>
+            <option>Hausa</option>
+            <option>Hawaiian</option>
+            <option>Hebrew</option>
+            <option>Hebrew</option>
+            <option>Hindi</option>
+            <option>Hmong</option>
+            <option>Hungarian</option>
+            <option>Icelandic</option>
+            <option>Igbo</option>
+            <option>Indonesian</option>
+            <option>Irish</option>
+            <option>Italian</option>
+            <option>Japanese</option>
+            <option>Javanese</option>
+            <option>Kannada</option>
+            <option>Kazakh</option>
+            <option>Khmer</option>
+            <option>Korean</option>
+            <option>Kurdish (kurmanji)</option>
+            <option>Kyrgyz</option>
+            <option>Lao</option>
+            <option>Latin</option>
+            <option>Latvian</option>
+            <option>Lithuanian</option>
+            <option>Luxembourgish</option>
+            <option>Macedonian</option>
+            <option>Malagasy</option>
+            <option>Malay</option>
+            <option>Malayalam</option>
+            <option>Maltese</option>
+            <option>Maori</option>
+            <option>Marathi</option>
+            <option>Mongolian</option>
+            <option>Myanmar (burmese)</option>
+            <option>Nepali</option>
+            <option>Norwegian</option>
+            <option>Odia</option>
+            <option>Pashto</option>
+            <option>Persian</option>
+            <option>Polish</option>
+            <option>Portuguese</option>
+            <option>Punjabi</option>
+            <option>Romanian</option>
+            <option>Russian</option>
+            <option>Samoan</option>
+            <option>Scots gaelic</option>
+            <option>Serbian</option>
+            <option>Sesotho</option>
+            <option>Shona</option>
+            <option>Sindhi</option>
+            <option>Sinhala</option>
+            <option>Slovak</option>
+            <option>Slovenian</option>
+            <option>Somali</option>
+            <option>Spanish</option>
+            <option>Sundanese</option>
+            <option>Swahili</option>
+            <option>Swedish</option>
+            <option>Tajik</option>
+            <option>Tamil</option>
+            <option>Telugu</option>
+            <option>Thai</option>
+            <option>Turkish</option>
+            <option>Ukrainian</option>
+            <option>Urdu</option>
+            <option>Uyghur</option>
+            <option>Uzbek</option>
+            <option>Vietnamese</option>
+            <option>Welsh</option>
+            <option>Xhosa</option>
+            <option>Yiddish</option>
+            <option>Yoruba</option>
+            <option>Zulu</option>
+
+        </select>
+    </p>
+    <p>
+        <label>Text to translate</label>
+        <input type="text" name="text_to_translate" value="{{ original }}">
+    </p>
+    <p>
+        <label>To language</label>
+        <select name="language_to" sele>To language
+            {% if to_language %}
+            <option>{{ to_language }}</option>
+            {% endif %}
+            <option>Afrikaans</option>
+            <option>Albanian</option>
+            <option>Amharic</option>
+            <option>Arabic</option>
+            <option>Armenian</option>
+            <option>Azerbaijani</option>
+            <option>Basque</option>
+            <option>Belarusian</option>
+            <option>Bengali</option>
+            <option>Bosnian</option>
+            <option>Bulgarian</option>
+            <option>Catalan</option>
+            <option>Cebuano</option>
+            <option>Chichewa</option>
+            <option>Chinese (simplified)</option>
+            <option>Chinese (traditional)</option>
+            <option>Corsican</option>
+            <option>Croatian</option>
+            <option>Czech</option>
+            <option>Danish</option>
+            <option>Dutch</option>
+            <option>English</option>
+            <option>Esperanto</option>
+            <option>Estonian</option>
+            <option>Filipino</option>
+            <option>Finnish</option>
+            <option>French</option>
+            <option>Frisian</option>
+            <option>Galician</option>
+            <option>Georgian</option>
+            <option>German</option>
+            <option>Greek</option>
+            <option>Gujarati</option>
+            <option>Haitian creole</option>
+            <option>Hausa</option>
+            <option>Hawaiian</option>
+            <option>Hebrew</option>
+            <option>Hebrew</option>
+            <option>Hindi</option>
+            <option>Hmong</option>
+            <option>Hungarian</option>
+            <option>Icelandic</option>
+            <option>Igbo</option>
+            <option>Indonesian</option>
+            <option>Irish</option>
+            <option>Italian</option>
+            <option>Japanese</option>
+            <option>Javanese</option>
+            <option>Kannada</option>
+            <option>Kazakh</option>
+            <option>Khmer</option>
+            <option>Korean</option>
+            <option>Kurdish (kurmanji)</option>
+            <option>Kyrgyz</option>
+            <option>Lao</option>
+            <option>Latin</option>
+            <option>Latvian</option>
+            <option>Lithuanian</option>
+            <option>Luxembourgish</option>
+            <option>Macedonian</option>
+            <option>Malagasy</option>
+            <option>Malay</option>
+            <option>Malayalam</option>
+            <option>Maltese</option>
+            <option>Maori</option>
+            <option>Marathi</option>
+            <option>Mongolian</option>
+            <option>Myanmar (burmese)</option>
+            <option>Nepali</option>
+            <option>Norwegian</option>
+            <option>Odia</option>
+            <option>Pashto</option>
+            <option>Persian</option>
+            <option>Polish</option>
+            <option>Portuguese</option>
+            <option>Punjabi</option>
+            <option>Romanian</option>
+            <option>Russian</option>
+            <option>Samoan</option>
+            <option>Scots gaelic</option>
+            <option>Serbian</option>
+            <option>Sesotho</option>
+            <option>Shona</option>
+            <option>Sindhi</option>
+            <option>Sinhala</option>
+            <option>Slovak</option>
+            <option>Slovenian</option>
+            <option>Somali</option>
+            <option>Spanish</option>
+            <option>Sundanese</option>
+            <option>Swahili</option>
+            <option>Swedish</option>
+            <option>Tajik</option>
+            <option>Tamil</option>
+            <option>Telugu</option>
+            <option>Thai</option>
+            <option>Turkish</option>
+            <option>Ukrainian</option>
+            <option>Urdu</option>
+            <option>Uyghur</option>
+            <option>Uzbek</option>
+            <option>Vietnamese</option>
+            <option>Welsh</option>
+            <option>Xhosa</option>
+            <option>Yiddish</option>
+            <option>Yoruba</option>
+            <option>Zulu</option>
+
+        </select>
+    </p>
+    <p>
+        <label>Translated text:</label>
+        <textarea rows="2" disabled cols="20">{{ translated }}</textarea>
+    </p>
+    <p>
+        <input type="submit" value="Translate!" name="input_submit">
+    </p>
+    {% if translations %}
+    <p>Last translations</p>
+    {% for translation in translations %}
+    <p>
+        <label>From language: {{ translation[0] }}</label>
+        <textarea name="{{ loop.index }}_text">{{ translation[1] }}</textarea>
+        <input type="submit" value="Choose" name="{{ loop.index }}_input">
+    </p>
+    {% endfor %}
+    {% endif %}
+</form>
+{% endblock %}
